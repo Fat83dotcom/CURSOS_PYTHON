@@ -22,7 +22,7 @@ def logTempoExecucao(funcao):
 
 
 def embaralhadorNumerico(numero):
-    numeros = [randint(0, numero) * x for x in range(numero)]
+    numeros = [randint((0 * x), numero) for x in range(numero)]
     return numeros
 
 
