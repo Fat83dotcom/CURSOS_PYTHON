@@ -21,7 +21,7 @@ def logTempoExecucao(funcao):
     return motor
 
 
-def embaralhadorNumerico(numero):
+def embaralhadorNumerico(numero) -> list:
     numeros = [randint((0 * x), numero) for x in range(numero)]
     return numeros
 
@@ -36,17 +36,22 @@ def contadorNumerico(numero) -> int:
 
 @logTempoExecucao
 def insertionSort(listaNumeros):
-    listaDeTrabalho = listaNumeros
+    listaOriginal = listaNumeros.copy()
+    listaDeTrabalho = listaNumeros.copy()
     for i in range(len(listaDeTrabalho)):
         for j in range(i)[::-1]:
             if listaDeTrabalho[j + 1] < listaDeTrabalho[j]:
                 listaDeTrabalho[j], listaDeTrabalho[j + 1] = listaDeTrabalho[j + 1], listaDeTrabalho[j]
             else:
                 break
-    return listaDeTrabalho
+
+    return f'números desordenados:{listaOriginal}, ordenados: {listaDeTrabalho},' \
+        f'{len(listaDeTrabalho)}'
 
 
-contadorNumerico(1000676000)
+contadorNumerico(100)
 
-embaralhados = embaralhadorNumerico(10000)
+embaralhados = embaralhadorNumerico(100)
 insertionSort(embaralhados)
+
+print(embaralhados)
