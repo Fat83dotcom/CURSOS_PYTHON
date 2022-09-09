@@ -67,8 +67,8 @@ def insertionSort2(lista):
 
 contadorNumerico(1000000)
 
-embaralhados = embaralhadorNumerico(1000000)
-# insertionSort(embaralhados)
+embaralhados = embaralhadorNumerico(100000)
+insertionSort(embaralhados)
 insertionSort2(embaralhados)
 
 # print(embaralhados)
