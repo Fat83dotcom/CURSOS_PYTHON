@@ -3,7 +3,7 @@ Exercicios e idéias para codigos
 
 ALGORITMO INSERTIONSORT
 
-insertionSort(array)
+`insertionSort(array)
   mark first element as sorted
   for each unsorted element X
     'extract' the element X
@@ -11,4 +11,4 @@ insertionSort(array)
       if current element j > X
         move sorted element to the right by 1
     break loop and insert X here
-end insertionSort
+end insertionSort`
