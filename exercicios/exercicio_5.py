@@ -20,7 +20,8 @@ def geradorDadosAlunos(qtdAlunos: int) -> list:
     geradorFalso = Faker(locale='pt-br')
     cpfsListados = geradorCpf(qtdAlunos)
     dadosColetados: list = []
-    for i in range(qtdAlunos):
+    contador = 0
+    while contador < qtdAlunos:
         dadoBruto: str = geradorFalso.name()
         recebeNome = ''
         recebeSobrenome = ''
@@ -37,10 +38,11 @@ def geradorDadosAlunos(qtdAlunos: int) -> list:
             recebeNome = separador[0]
             separador.pop(0)
             recebeSobrenome = ' '.join(separador)
-        dadoCompleto['cpf'] = cpfsListados[i]
+        dadoCompleto['cpf'] = cpfsListados[contador]
         dadoCompleto['nome'] = recebeNome
         dadoCompleto['sobrenome'] = recebeSobrenome
         dadosColetados.append(dadoCompleto)
+        contador += 1
     return dadosColetados
 
 
@@ -81,10 +83,10 @@ def registradorEnderecos(qtdEnderecos: int,
                                     endereco['complemento'],
                                     nome_tabela=nomeTabela,
                                     nome_colunas=nomeColunas)
-    bancoDados.fecharConexao()
     return contador + 1
 
 
+@logTempoExecucao
 def registradorAluno(qtdAluno: int,
                      bancoDados: Escola,
                      nomeTabela=None,
@@ -98,30 +100,21 @@ def registradorAluno(qtdAluno: int,
         bancoDados.cadastroTabelas(dados['cpf'], dados['nome'], dados['sobrenome'], int(consultaEnderecos[contador][0]),
                                    nome_tabela=nomeTabela,
                                    nome_colunas=nomeColuna)
-    bancoDados.fecharConexao()
-    return contador
+    return contador + 1
 
 
 postgresSQL = Escola(host, porta, 'db_escola', 'fernandomendes', senha)
 
-QTD_REGISTROS = 10
+QTD_REGISTROS = 10000
 
-# registradorEnderecos(QTD_REGISTROS,
-#                      postgresSQL,
-#                      nomeColunas='(logradouro, numero, bairro, complemento)',
-#                      nomeTabela='cadastros_endereco', pkTabela='cod_end')
-
-#  print(postgresSQL.retornarIntervalo('cadastros_endereco', 'cod_end', numero_consultas=4))
-
-# consultaEnderecos = postgresSQL.retornarIntervalo('cadastros_endereco',
-#                                                   'cod_end',
-#                                                   numero_consultas=10)
-
-# for i in consultaEnderecos:
-#     print(i[0])
-# print(consultaEnderecos)
+registradorEnderecos(QTD_REGISTROS,
+                     postgresSQL,
+                     nomeColunas='(logradouro, numero, bairro, complemento)',
+                     nomeTabela='cadastros_endereco')
 
 registradorAluno(bancoDados=postgresSQL, qtdAluno=QTD_REGISTROS,
                  nomeTabela='cadastros_aluno',
                  nomeColuna='(cpf, nome_aluno, sobrenome_aluno, endereco)',
                  nomeTabEnd='cadastros_endereco', pkTabEnd='cod_end')
+
+postgresSQL.fecharConexao()
