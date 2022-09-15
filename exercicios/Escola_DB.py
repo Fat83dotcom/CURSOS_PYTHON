@@ -26,6 +26,9 @@ class BancoDeDados(ABC):
     def buscarUmDado(self):
         return self.cursor.fetchone()
 
+    def buscarIntervalo(self, intervalo):
+        return self.cursor.fetchmany(intervalo)
+
     def geradorSQLInsert(self, *args, nome_colunas='',  nome_tabela=''):
         valores = f'{args}'
         sql1 = f"INSERT INTO {nome_tabela} {nome_colunas} VALUES {valores}"
@@ -55,15 +58,20 @@ class Escola(BancoDeDados):
         self.enviar()
         return self.buscarUmDado()
 
-    def cadastroTabelas(self, nome_tabela, **kwarg,):
-        colunas = [v for k, v in kwarg.items()]
-        sql = self.geradorSQLInsert(*colunas, nome_tabela=nome_tabela)
+    def retornarIntervalo(self, nome_tabela=None, pk_tabela=None, numero_consultas=0):
+        sql = f"SELECT {pk_tabela} FROM {nome_tabela}"
+        self.executar(sql)
+        self.enviar()
+        return self.buscarIntervalo(numero_consultas)
+
+    def cadastroTabelas(self, *args, nome_tabela=None, nome_colunas=None):
+        sql = self.geradorSQLInsert(*args, nome_colunas=nome_colunas, nome_tabela=nome_tabela)
         try:
             self.executar(sql)
             self.enviar()
         except psycopg2.Error as erro:
             self.abortar()
-            print(f'O registro {colunas}, não foi efetuado com sucesso!')
+            print('O registro não foi efetuado com sucesso!')
             print(erro)
 
     def cadastroEndereco(self, logradouro, numero, bairro, complemento, nome_tabela='', nome_colunas='') -> int:

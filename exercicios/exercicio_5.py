@@ -69,32 +69,59 @@ def geradorEndereco(qtdEnderecos: int) -> list:
 
 
 @logTempoExecucao
-def registradorEnderecos(qtdEnderecos: int, bancoDados: Escola) -> int:
+def registradorEnderecos(qtdEnderecos: int,
+                         bancoDados: Escola,
+                         nomeTabela=None,
+                         nomeColunas=None) -> int:
     enderecos = geradorEndereco(qtdEnderecos)
     for contador, endereco in enumerate(enderecos):
-        bancoDados.cadastroEndereco(
-            endereco['logradouro'],
-            endereco['numero'],
-            endereco['bairro'],
-            endereco['complemento'],
-            nome_tabela='cadastros_endereco',
-            nome_colunas='(logradouro, numero, bairro, complemento)')
+        bancoDados.cadastroEndereco(endereco['logradouro'],
+                                    endereco['numero'],
+                                    endereco['bairro'],
+                                    endereco['complemento'],
+                                    nome_tabela=nomeTabela,
+                                    nome_colunas=nomeColunas)
     bancoDados.fecharConexao()
     return contador + 1
 
 
-def registradorAluno(qtdAluno: int, bancoDados: Escola, nomeTabela=None) -> int:
-    registros: list = geradorDadosAlunos()
-    for contador, dados in registros:
-        bancoDados.cadastroTabelas(nomeTabela, )
-        pass
+def registradorAluno(qtdAluno: int,
+                     bancoDados: Escola,
+                     nomeTabela=None,
+                     nomeColuna=None,
+                     nomeTabEnd=None,
+                     pkTabEnd=None) -> int:
+    registros: list = geradorDadosAlunos(qtdAluno)
+    consultaEnderecos = bancoDados.retornarIntervalo(nomeTabEnd, pkTabEnd,
+                                                     qtdAluno)
+    for contador, dados in enumerate(registros):
+        bancoDados.cadastroTabelas(dados['cpf'], dados['nome'], dados['sobrenome'], int(consultaEnderecos[contador][0]),
+                                   nome_tabela=nomeTabela,
+                                   nome_colunas=nomeColuna)
+    bancoDados.fecharConexao()
     return contador
 
 
 postgresSQL = Escola(host, porta, 'db_escola', 'fernandomendes', senha)
 
-QTD_REGISTROS = 5
+QTD_REGISTROS = 10
 
-# registradorEnderecos(QTD_REGISTROS, postgresSQL)
+# registradorEnderecos(QTD_REGISTROS,
+#                      postgresSQL,
+#                      nomeColunas='(logradouro, numero, bairro, complemento)',
+#                      nomeTabela='cadastros_endereco', pkTabela='cod_end')
 
-print(postgresSQL.retornaUltimaEntrada('cadastros_endereco', 'cod_end'))
+#  print(postgresSQL.retornarIntervalo('cadastros_endereco', 'cod_end', numero_consultas=4))
+
+# consultaEnderecos = postgresSQL.retornarIntervalo('cadastros_endereco',
+#                                                   'cod_end',
+#                                                   numero_consultas=10)
+
+# for i in consultaEnderecos:
+#     print(i[0])
+# print(consultaEnderecos)
+
+registradorAluno(bancoDados=postgresSQL, qtdAluno=QTD_REGISTROS,
+                 nomeTabela='cadastros_aluno',
+                 nomeColuna='(cpf, nome_aluno, sobrenome_aluno, endereco)',
+                 nomeTabEnd='cadastros_endereco', pkTabEnd='cod_end')

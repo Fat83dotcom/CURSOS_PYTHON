@@ -49,3 +49,87 @@
 2022-09-15 17:13:50.514391: A função registradorEnderecos levou 1.5447 segundos na execução
 2022-09-15 17:13:50.514447: Foram contados / ordenados / processados: 5 números / registros.
 
+2022-09-15 17:27:25.564060: A função geradorEndereco levou 0.078 segundos na execução
+2022-09-15 17:27:25.564134: Foram contados / ordenados / processados: [{'logradouro': 'Estação Francisco da Mota', 'numero': '90', 'bairro': 'Nova America', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Trecho Bianca Moraes', 'numero': '46', 'bairro': 'Vila Da Ária', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Lagoa de Sales', 'numero': '20', 'bairro': 'Maria Virgínia', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Lago Jesus', 'numero': '326', 'bairro': 'Santa Rosa', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Chácara Moura', 'numero': '63', 'bairro': 'Minas Brasil', 'complemento': 'Casa, Apto...'}] números / registros.
+
+2022-09-15 17:27:54.941431: A função geradorEndereco levou 0.0692 segundos na execução
+2022-09-15 17:27:54.941490: Foram contados / ordenados / processados: [{'logradouro': 'Alameda de Araújo', 'numero': '1', 'bairro': 'Vila Paris', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Lago Vinicius Pereira', 'numero': '577', 'bairro': 'Paulo Vi', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Núcleo de Cardoso', 'numero': '68', 'bairro': 'Lajedo', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Colônia de Cunha', 'numero': '42', 'bairro': 'Conjunto Bonsucesso', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Vale da Cunha', 'numero': '69', 'bairro': 'Jardim Dos Comerciarios', 'complemento': 'Casa, Apto...'}] números / registros.
+
+2022-09-15 17:27:56.529037: A função registradorEnderecos levou 1.6568 segundos na execução
+2022-09-15 17:27:56.529079: Foram contados / ordenados / processados: (5, [(7064,), (7065,), (7066,), (7067,), (7068,)]) números / registros.
+
+2022-09-15 17:58:05.079347: A função geradorEndereco levou 0.045 segundos na execução
+2022-09-15 17:58:05.079386: Foram contados / ordenados / processados: [{'logradouro': 'Vale de Monteiro', 'numero': '30', 'bairro': 'Cardoso', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Rodovia Dias', 'numero': '23', 'bairro': 'Granja Werneck', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Parque Maria Alice Martins', 'numero': '73', 'bairro': 'Nova Suíça', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Travessa Carvalho', 'numero': '63', 'bairro': 'Santa Amelia', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Aeroporto de Costa', 'numero': '88', 'bairro': 'Canaa', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Loteamento João Felipe Cardoso', 'numero': '40', 'bairro': 'Vila Betânia', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Praça de Ribeiro', 'numero': '61', 'bairro': 'Paraíso', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Travessa Silveira', 'numero': '400', 'bairro': 'Vila Puc', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Ladeira Pedro Miguel Melo', 'numero': '14', 'bairro': 'Piraja', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Setor Martins', 'numero': '561', 'bairro': 'Pedreira Padro Lopes', 'complemento': 'Casa, Apto...'}] números / registros.
+
+2022-09-15 17:58:07.408160: A função registradorEnderecos levou 2.3737 segundos na execução
+2022-09-15 17:58:07.408228: Foram contados / ordenados / processados: 10 números / registros.
+
+2022-09-15 18:25:34.462644: A função geradorCpf levou 0.0 segundos na execução
+2022-09-15 18:25:34.462699: Foram contados / ordenados / processados: [56984073442, 24448227308, 75307923791, 56820702386, 78740536114, 98251452027, 98799250263, 75577166554, 13532548026, 87741773179, 66551418300] números / registros.
+
+2022-09-15 18:25:34.463263: A função geradorDadosAlunos levou 0.0406 segundos na execução
+2022-09-15 18:25:34.463291: Foram contados / ordenados / processados: [{'cpf': 56984073442, 'nome': 'Gustavo', 'sobrenome': 'Henrique Souza', 'endereco': ''}, {'cpf': 24448227308, 'nome': 'Ana', 'sobrenome': 'Laura Viana', 'endereco': ''}, {'cpf': 75307923791, 'nome': 'Bernardo', 'sobrenome': 'Farias', 'endereco': ''}, {'cpf': 78740536114, 'nome': 'Nina', 'sobrenome': 'Martins', 'endereco': ''}, {'cpf': 98251452027, 'nome': 'Ana', 'sobrenome': 'Carolina Pereira', 'endereco': ''}, {'cpf': 98799250263, 'nome': 'Pedro', 'sobrenome': 'Henrique Silva', 'endereco': ''}, {'cpf': 13532548026, 'nome': 'Maria', 'sobrenome': 'Fernanda Ferreira', 'endereco': ''}, {'cpf': 87741773179, 'nome': 'Catarina', 'sobrenome': 'Sales', 'endereco': ''}] números / registros.
+
+2022-09-15 18:26:04.492452: A função geradorCpf levou 0.0 segundos na execução
+2022-09-15 18:26:04.492487: Foram contados / ordenados / processados: [94046065059, 61302175113, 16713282217, 96716294509, 49148446861, 40217745199, 37315056688, 54314841075, 50417679383, 80904716632, 33680162266] números / registros.
+
+2022-09-15 18:26:04.492954: A função geradorDadosAlunos levou 0.037 segundos na execução
+2022-09-15 18:26:04.492977: Foram contados / ordenados / processados: [{'cpf': 94046065059, 'nome': 'Guilherme', 'sobrenome': 'Nogueira', 'endereco': ''}, {'cpf': 61302175113, 'nome': 'João', 'sobrenome': 'Pedro Duarte', 'endereco': ''}, {'cpf': 16713282217, 'nome': 'Nathan', 'sobrenome': 'Costa', 'endereco': ''}, {'cpf': 96716294509, 'nome': 'Marcos', 'sobrenome': 'Vinicius Porto', 'endereco': ''}, {'cpf': 49148446861, 'nome': 'Caroline', 'sobrenome': 'Campos', 'endereco': ''}, {'cpf': 40217745199, 'nome': 'Maria', 'sobrenome': 'Luiza da Cruz', 'endereco': ''}, {'cpf': 37315056688, 'nome': 'Olivia', 'sobrenome': 'Barros', 'endereco': ''}, {'cpf': 50417679383, 'nome': 'Eduardo', 'sobrenome': 'Araújo', 'endereco': ''}, {'cpf': 80904716632, 'nome': 'Marcelo', 'sobrenome': 'Araújo', 'endereco': ''}] números / registros.
+
+2022-09-15 18:28:49.141578: A função geradorCpf levou 24.8576 segundos na execução
+2022-09-15 18:28:49.141646: Foram contados / ordenados / processados: [12289885252, 59648655172, 12467687718, 31597440489, 60262409035, 59853536494, 86036677646, 61453195281, 95170795252, 27619845877, 75537601151] números / registros.
+
+2022-09-15 18:29:45.548216: A função geradorCpf levou 0.0004 segundos na execução
+2022-09-15 18:29:45.548269: Foram contados / ordenados / processados: [79274389085, 93856049063, 86121482407, 90032639372, 43946381773, 87533342959, 53894824305, 22040265747, 80737747155, 21777262234, 32498781309] números / registros.
+
+2022-09-15 18:29:45.551455: A função geradorDadosAlunos levou 0.1247 segundos na execução
+2022-09-15 18:29:45.551497: Foram contados / ordenados / processados: [{'cpf': 79274389085, 'nome': 'Anthony', 'sobrenome': 'Correia', 'endereco': ''}, {'cpf': 93856049063, 'nome': 'Maria', 'sobrenome': 'Luiza da Rocha', 'endereco': ''}, {'cpf': 86121482407, 'nome': 'Cauã', 'sobrenome': 'Ribeiro', 'endereco': ''}, {'cpf': 43946381773, 'nome': 'Paulo', 'sobrenome': 'Monteiro', 'endereco': ''}, {'cpf': 87533342959, 'nome': 'João', 'sobrenome': 'Miguel Campos', 'endereco': ''}, {'cpf': 22040265747, 'nome': 'Vicente', 'sobrenome': 'da Paz', 'endereco': ''}, {'cpf': 80737747155, 'nome': 'João', 'sobrenome': 'Vitor Barbosa', 'endereco': ''}, {'cpf': 21777262234, 'nome': 'Raquel', 'sobrenome': 'Costela', 'endereco': ''}] números / registros.
+
+2022-09-15 18:31:26.490759: A função geradorCpf levou 0.0001 segundos na execução
+2022-09-15 18:31:26.490832: Foram contados / ordenados / processados: [32669154273, 30290304962, 85146926209, 41881202338, 95953496259, 57604297354, 79732659148, 74699968525, 96652418968, 53554119517, 57172482751] números / registros.
+
+2022-09-15 18:31:26.491673: A função geradorDadosAlunos levou 0.0754 segundos na execução
+2022-09-15 18:31:26.491706: Foram contados / ordenados / processados: [{'cpf': 32669154273, 'nome': 'Carolina', 'sobrenome': 'Mendes', 'endereco': ''}, {'cpf': 30290304962, 'nome': 'Camila', 'sobrenome': 'Pinto', 'endereco': ''}, {'cpf': 85146926209, 'nome': 'Rafaela', 'sobrenome': 'Cunha', 'endereco': ''}, {'cpf': 41881202338, 'nome': 'Nathan', 'sobrenome': 'Pinto', 'endereco': ''}, {'cpf': 95953496259, 'nome': 'Maitê', 'sobrenome': 'Cavalcanti', 'endereco': ''}, {'cpf': 57604297354, 'nome': 'Luna', 'sobrenome': 'Santos', 'endereco': ''}, {'cpf': 79732659148, 'nome': 'Leandro', 'sobrenome': 'Monteiro', 'endereco': ''}, {'cpf': 74699968525, 'nome': 'Catarina', 'sobrenome': 'Santos', 'endereco': ''}, {'cpf': 96652418968, 'nome': 'Lucas', 'sobrenome': 'Cavalcanti', 'endereco': ''}, {'cpf': 53554119517, 'nome': 'Bárbara', 'sobrenome': 'da Costa', 'endereco': ''}] números / registros.
+
+2022-09-15 18:34:08.362889: A função geradorCpf levou 0.0003 segundos na execução
+2022-09-15 18:34:08.362930: Foram contados / ordenados / processados: [86811668224, 68654690408, 45815905064, 86402616554, 86336864847, 55113150705, 55899912146, 34621126874, 77265682747, 97858037726, 49434811999] números / registros.
+
+2022-09-15 18:34:08.364634: A função geradorDadosAlunos levou 0.0943 segundos na execução
+2022-09-15 18:34:08.364662: Foram contados / ordenados / processados: [{'cpf': 86811668224, 'nome': 'Caroline', 'sobrenome': 'Souza', 'endereco': ''}, {'cpf': 68654690408, 'nome': 'Stella', 'sobrenome': 'da Mata', 'endereco': ''}, {'cpf': 86402616554, 'nome': 'Maria', 'sobrenome': 'Eduarda Nascimento', 'endereco': ''}, {'cpf': 86336864847, 'nome': 'Isaac', 'sobrenome': 'Alves', 'endereco': ''}, {'cpf': 55113150705, 'nome': 'Sophie', 'sobrenome': 'da Rocha', 'endereco': ''}, {'cpf': 55899912146, 'nome': 'Felipe', 'sobrenome': 'Moraes', 'endereco': ''}, {'cpf': 34621126874, 'nome': 'Ana', 'sobrenome': 'Carolina Silveira', 'endereco': ''}, {'cpf': 77265682747, 'nome': 'Vicente', 'sobrenome': 'Teixeira', 'endereco': ''}, {'cpf': 97858037726, 'nome': 'Rafaela', 'sobrenome': 'Peixoto', 'endereco': ''}] números / registros.
+
+2022-09-15 18:34:32.673046: A função geradorCpf levou 0.0004 segundos na execução
+2022-09-15 18:34:32.673100: Foram contados / ordenados / processados: [64199485441, 40634142819, 68905978760, 10939190825, 92601551627, 18309199597, 22517082861, 98948238195, 83247712891, 19641425372, 61764174109] números / registros.
+
+2022-09-15 18:34:32.674886: A função geradorDadosAlunos levou 0.1189 segundos na execução
+2022-09-15 18:34:32.674914: Foram contados / ordenados / processados: [{'cpf': 64199485441, 'nome': 'Diogo', 'sobrenome': 'Moreira', 'endereco': ''}, {'cpf': 40634142819, 'nome': 'Isabel', 'sobrenome': 'da Rosa', 'endereco': ''}, {'cpf': 68905978760, 'nome': 'Ana', 'sobrenome': 'Júlia Peixoto', 'endereco': ''}, {'cpf': 10939190825, 'nome': 'Alícia', 'sobrenome': 'Dias', 'endereco': ''}, {'cpf': 18309199597, 'nome': 'Carolina', 'sobrenome': 'Duarte', 'endereco': ''}, {'cpf': 22517082861, 'nome': 'Carlos', 'sobrenome': 'Eduardo Mendes', 'endereco': ''}, {'cpf': 98948238195, 'nome': 'Kevin', 'sobrenome': 'Gomes', 'endereco': ''}, {'cpf': 83247712891, 'nome': 'Alícia', 'sobrenome': 'Ferreira', 'endereco': ''}, {'cpf': 19641425372, 'nome': 'Pietro', 'sobrenome': 'das Neves', 'endereco': ''}] números / registros.
+
+2022-09-15 18:35:08.399141: A função geradorCpf levou 0.0 segundos na execução
+2022-09-15 18:35:08.399179: Foram contados / ordenados / processados: [64892515426, 66553349608, 38032831081, 98047890315, 97506776346, 14646245453, 85141754864, 66312238896, 17956656308, 81444574234, 73157215772] números / registros.
+
+2022-09-15 18:35:08.399793: A função geradorDadosAlunos levou 0.0496 segundos na execução
+2022-09-15 18:35:08.399819: Foram contados / ordenados / processados: [{'cpf': 64892515426, 'nome': 'João', 'sobrenome': 'Gabriel Gomes', 'endereco': ''}, {'cpf': 66553349608, 'nome': 'Kamilly', 'sobrenome': 'das Neves', 'endereco': ''}, {'cpf': 38032831081, 'nome': 'Danilo', 'sobrenome': 'da Paz', 'endereco': ''}, {'cpf': 98047890315, 'nome': 'Murilo', 'sobrenome': 'Moraes', 'endereco': ''}, {'cpf': 97506776346, 'nome': 'Carolina', 'sobrenome': 'das Neves', 'endereco': ''}, {'cpf': 14646245453, 'nome': 'Isabelly', 'sobrenome': 'Duarte', 'endereco': ''}, {'cpf': 85141754864, 'nome': 'Julia', 'sobrenome': 'Barbosa', 'endereco': ''}, {'cpf': 66312238896, 'nome': 'Raquel', 'sobrenome': 'Correia', 'endereco': ''}] números / registros.
+
+2022-09-15 18:36:10.676278: A função geradorCpf levou 0.0 segundos na execução
+2022-09-15 18:36:10.676328: Foram contados / ordenados / processados: [94833525850, 65802393867, 12292075439, 37486819728, 48404810291, 81819980631, 26877228313, 62379001274, 22991963292, 47684101085, 11145181438] números / registros.
+
+2022-09-15 18:36:10.676821: A função geradorDadosAlunos levou 0.0546 segundos na execução
+2022-09-15 18:36:10.676849: Foram contados / ordenados / processados: [{'cpf': 94833525850, 'nome': 'Otávio', 'sobrenome': 'Novaes', 'endereco': ''}, {'cpf': 65802393867, 'nome': 'Gustavo', 'sobrenome': 'da Rosa', 'endereco': ''}, {'cpf': 12292075439, 'nome': 'Juan', 'sobrenome': 'Gomes', 'endereco': ''}, {'cpf': 48404810291, 'nome': 'Clarice', 'sobrenome': 'da Costa', 'endereco': ''}, {'cpf': 26877228313, 'nome': 'Davi', 'sobrenome': 'Lucca Azevedo', 'endereco': ''}, {'cpf': 62379001274, 'nome': 'Mariane', 'sobrenome': 'Almeida', 'endereco': ''}, {'cpf': 22991963292, 'nome': 'Pedro', 'sobrenome': 'Henrique Rocha', 'endereco': ''}, {'cpf': 47684101085, 'nome': 'Lívia', 'sobrenome': 'Rodrigues', 'endereco': ''}] números / registros.
+
+2022-09-15 18:43:24.181983: A função geradorCpf levou 0.0001 segundos na execução
+2022-09-15 18:43:24.182023: Foram contados / ordenados / processados: [70026842016, 71856004000, 99964252706, 21335435331, 53513362729, 56471157866, 47690560010, 60913880341, 11199131639, 21340081306, 84104866238] números / registros.
+
+2022-09-15 18:43:24.182545: A função geradorDadosAlunos levou 0.0388 segundos na execução
+2022-09-15 18:43:24.182570: Foram contados / ordenados / processados: [{'cpf': 70026842016, 'nome': 'João', 'sobrenome': 'Pedro Duarte', 'endereco': ''}, {'cpf': 71856004000, 'nome': 'Leonardo', 'sobrenome': 'Campos', 'endereco': ''}, {'cpf': 99964252706, 'nome': 'Ian', 'sobrenome': 'Nogueira', 'endereco': ''}, {'cpf': 21335435331, 'nome': 'Sophie', 'sobrenome': 'Monteiro', 'endereco': ''}, {'cpf': 56471157866, 'nome': 'Lucas', 'sobrenome': 'Rezende', 'endereco': ''}, {'cpf': 47690560010, 'nome': 'Lara', 'sobrenome': 'Correia', 'endereco': ''}, {'cpf': 21340081306, 'nome': 'Natália', 'sobrenome': 'da Cunha', 'endereco': ''}] números / registros.
+
+2022-09-15 18:45:06.255820: A função geradorCpf levou 0.0005 segundos na execução
+2022-09-15 18:45:06.255874: Foram contados / ordenados / processados: [89558668866, 92354300645, 18108971773, 98885539307, 10445865389, 70235904622, 46283510096, 88673886902, 19521620314, 99747273212, 48854325597] números / registros.
+
+2022-09-15 18:45:06.258503: A função geradorDadosAlunos levou 0.1223 segundos na execução
+2022-09-15 18:45:06.258533: Foram contados / ordenados / processados: [{'cpf': 89558668866, 'nome': 'Stella', 'sobrenome': 'Santos', 'endereco': ''}, {'cpf': 92354300645, 'nome': 'Catarina', 'sobrenome': 'Lima', 'endereco': ''}, {'cpf': 18108971773, 'nome': 'Lavínia', 'sobrenome': 'Aragão', 'endereco': ''}, {'cpf': 98885539307, 'nome': 'Daniel', 'sobrenome': 'Barbosa', 'endereco': ''}, {'cpf': 10445865389, 'nome': 'Caio', 'sobrenome': 'Lima', 'endereco': ''}, {'cpf': 70235904622, 'nome': 'Olivia', 'sobrenome': 'Mendes', 'endereco': ''}, {'cpf': 46283510096, 'nome': 'Davi', 'sobrenome': 'Luiz Sales', 'endereco': ''}, {'cpf': 88673886902, 'nome': 'Alexia', 'sobrenome': 'Farias', 'endereco': ''}, {'cpf': 19521620314, 'nome': 'Vitória', 'sobrenome': 'da Mata', 'endereco': ''}, {'cpf': 99747273212, 'nome': 'Rebeca', 'sobrenome': 'Nascimento', 'endereco': ''}] números / registros.
+
+2022-09-15 18:47:55.304938: A função geradorCpf levou 0.0002 segundos na execução
+2022-09-15 18:47:55.304982: Foram contados / ordenados / processados: [11052179169, 53358105089, 65098384362, 87029746954, 94655210380, 59801306158, 86903627278, 62428611279, 59380710870, 38451985114, 96957908573] números / registros.
+
+2022-09-15 18:47:55.306827: A função geradorDadosAlunos levou 0.1135 segundos na execução
+2022-09-15 18:47:55.306860: Foram contados / ordenados / processados: [{'cpf': 11052179169, 'nome': 'Ryan', 'sobrenome': 'Almeida', 'endereco': ''}, {'cpf': 53358105089, 'nome': 'Maria', 'sobrenome': 'Clara Nunes', 'endereco': ''}, {'cpf': 65098384362, 'nome': 'Ana', 'sobrenome': 'Júlia Santos', 'endereco': ''}, {'cpf': 87029746954, 'nome': 'Sabrina', 'sobrenome': 'Viana', 'endereco': ''}, {'cpf': 94655210380, 'nome': 'Anthony', 'sobrenome': 'Novaes', 'endereco': ''}, {'cpf': 59801306158, 'nome': 'Maysa', 'sobrenome': 'Nunes', 'endereco': ''}, {'cpf': 86903627278, 'nome': 'João', 'sobrenome': 'Miguel Gonçalves', 'endereco': ''}, {'cpf': 62428611279, 'nome': 'Esther', 'sobrenome': 'Mendes', 'endereco': ''}, {'cpf': 38451985114, 'nome': 'Matheus', 'sobrenome': 'Barbosa', 'endereco': ''}] números / registros.
+
