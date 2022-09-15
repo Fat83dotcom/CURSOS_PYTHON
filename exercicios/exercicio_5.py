@@ -1,4 +1,3 @@
-from typing import List
 from faker import Faker
 from random import randint
 from dadosConfidenciais import senha, host, porta
@@ -72,7 +71,6 @@ def geradorEndereco(qtdEnderecos: int) -> list:
 @logTempoExecucao
 def registradorEnderecos(qtdEnderecos: int, bancoDados: Escola) -> int:
     enderecos = geradorEndereco(qtdEnderecos)
-
     for contador, endereco in enumerate(enderecos):
         bancoDados.cadastroEndereco(
             endereco['logradouro'],
@@ -85,14 +83,18 @@ def registradorEnderecos(qtdEnderecos: int, bancoDados: Escola) -> int:
     return contador + 1
 
 
-def registradorAluno(qtdAluno: int, bancoDados: Escola) -> int:
+def registradorAluno(qtdAluno: int, bancoDados: Escola, nomeTabela=None) -> int:
     registros: list = geradorDadosAlunos()
     for contador, dados in registros:
+        bancoDados.cadastroTabelas(nomeTabela, )
         pass
+    return contador
 
 
 postgresSQL = Escola(host, porta, 'db_escola', 'fernandomendes', senha)
 
-QTD_REGISTROS = 5000
+QTD_REGISTROS = 5
 
-registradorEnderecos(QTD_REGISTROS, postgresSQL)
+# registradorEnderecos(QTD_REGISTROS, postgresSQL)
+
+print(postgresSQL.retornaUltimaEntrada('cadastros_endereco', 'cod_end'))

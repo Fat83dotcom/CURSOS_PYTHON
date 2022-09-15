@@ -23,6 +23,9 @@ class BancoDeDados(ABC):
     def buscarDados(self):
         return self.cursor.fetchall()
 
+    def buscarUmDado(self):
+        return self.cursor.fetchone()
+
     def geradorSQLInsert(self, *args, nome_colunas='',  nome_tabela=''):
         valores = f'{args}'
         sql1 = f"INSERT INTO {nome_tabela} {nome_colunas} VALUES {valores}"
@@ -45,6 +48,12 @@ class Escola(BancoDeDados):
 
     def __repr__(self) -> str:
         return super().__repr__()
+
+    def retornaUltimaEntrada(self, nome_tabela=None, pk_tabela=None):
+        sql = f"SELECT MAX({pk_tabela}) FROM {nome_tabela}"
+        self.executar(sql)
+        self.enviar()
+        return self.buscarUmDado()
 
     def cadastroTabelas(self, nome_tabela, **kwarg,):
         colunas = [v for k, v in kwarg.items()]

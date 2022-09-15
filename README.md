@@ -1,7 +1,7 @@
 # CURSOS_PYTHON
-Exercicios e idéias para codigos
+##Exercicios e idéias para codigos
 
-ALGORITMO INSERTIONSORT
+#ALGORITMO INSERTIONSORT
 
 `insertionSort(array)`
 `  mark first element as sorted`

@@ -43,3 +43,9 @@
 2022-09-15 03:53:25.296545: A função registradorEnderecos levou 1626.4148 segundos na execução
 2022-09-15 03:53:25.296609: Foram contados / ordenados / processados: 5000 números / registros.
 
+2022-09-15 17:13:49.196812: A função geradorEndereco levou 0.2272 segundos na execução
+2022-09-15 17:13:49.196855: Foram contados / ordenados / processados: [{'logradouro': 'Área Luiz Fernando da Conceição', 'numero': '192', 'bairro': 'Vila Nova Gameleira 3ª Seção', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Viaduto da Conceição', 'numero': '82', 'bairro': 'Ápia', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Morro Clara da Rosa', 'numero': '48', 'bairro': 'Palmares', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Distrito de da Rocha', 'numero': '9', 'bairro': 'São Salvador', 'complemento': 'Casa, Apto...'}, {'logradouro': 'Vale de Gonçalves', 'numero': '610', 'bairro': 'Vila Oeste', 'complemento': 'Casa, Apto...'}] números / registros.
+
+2022-09-15 17:13:50.514391: A função registradorEnderecos levou 1.5447 segundos na execução
+2022-09-15 17:13:50.514447: Foram contados / ordenados / processados: 5 números / registros.
+
