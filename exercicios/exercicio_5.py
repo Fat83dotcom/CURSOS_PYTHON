@@ -1,3 +1,4 @@
+from typing import List
 from faker import Faker
 from random import randint
 from dadosConfidenciais import senha, host, porta
@@ -16,7 +17,7 @@ def geradorCpf(qtdCpfs: int) -> list:
 
 
 @logTempoExecucao
-def geradorNomeAlunos(qtdAlunos: int) -> list:
+def geradorDadosAlunos(qtdAlunos: int) -> list:
     geradorFalso = Faker(locale='pt-br')
     cpfsListados = geradorCpf(qtdAlunos)
     dadosColetados: list = []
@@ -68,25 +69,30 @@ def geradorEndereco(qtdEnderecos: int) -> list:
     return dadoCompleto
 
 
-postgresSQL = Escola(host, porta, 'db_escola', 'fernandomendes', senha)
-
-QTD_REGISTROS = 5000
-
-
 @logTempoExecucao
-def registradorEnderecos(qtdEnderecos: int) -> int:
+def registradorEnderecos(qtdEnderecos: int, bancoDados: Escola) -> int:
     enderecos = geradorEndereco(qtdEnderecos)
 
     for contador, endereco in enumerate(enderecos):
-        postgresSQL.cadastroEndereco(
+        bancoDados.cadastroEndereco(
             endereco['logradouro'],
             endereco['numero'],
             endereco['bairro'],
             endereco['complemento'],
             nome_tabela='cadastros_endereco',
             nome_colunas='(logradouro, numero, bairro, complemento)')
-    postgresSQL.fecharConexao()
+    bancoDados.fecharConexao()
     return contador + 1
 
 
-registradorEnderecos(QTD_REGISTROS)
+def registradorAluno(qtdAluno: int, bancoDados: Escola) -> int:
+    registros: list = geradorDadosAlunos()
+    for contador, dados in registros:
+        pass
+
+
+postgresSQL = Escola(host, porta, 'db_escola', 'fernandomendes', senha)
+
+QTD_REGISTROS = 5000
+
+registradorEnderecos(QTD_REGISTROS, postgresSQL)

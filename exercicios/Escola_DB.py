@@ -43,6 +43,9 @@ class Escola(BancoDeDados):
     def __init__(self, host='', port='', dbname='', user='', password='') -> None:
         super().__init__(host, port, dbname, user, password)
 
+    def __repr__(self) -> str:
+        return super().__repr__()
+
     def cadastroTabelas(self, nome_tabela, **kwarg,):
         colunas = [v for k, v in kwarg.items()]
         sql = self.geradorSQLInsert(*colunas, nome_tabela=nome_tabela)
