@@ -105,7 +105,7 @@ def registradorAluno(qtdAluno: int,
 
 postgresSQL = Escola(host, porta, 'db_escola', 'fernandomendes', senha)
 
-QTD_REGISTROS = 10000
+QTD_REGISTROS = 500
 
 registradorEnderecos(QTD_REGISTROS,
                      postgresSQL,
