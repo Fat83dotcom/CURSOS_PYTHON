@@ -3,6 +3,7 @@ from random import randint
 from dadosConfidenciais import senha, host, porta
 from Escola_DB import Escola
 from funcoes_decoradoras import logTempoExecucao
+# from itertools import count
 
 
 @logTempoExecucao
@@ -30,6 +31,7 @@ def geradorDadosAlunos(qtdAlunos: int) -> list:
             'nome': '',
             'sobrenome': '',
             'endereco': '',
+            'nasc': '',
         }
         if '.' in dadoBruto:
             continue
@@ -88,33 +90,45 @@ def registradorEnderecos(qtdEnderecos: int,
 
 @logTempoExecucao
 def registradorAluno(qtdAluno: int,
-                     bancoDados: Escola,
-                     nomeTabela=None,
-                     nomeColuna=None,
+                     bD: Escola,
+                     nomeT=None,
+                     nomeC=None,
                      nomeTabEnd=None,
                      pkTabEnd=None) -> int:
     registros: list = geradorDadosAlunos(qtdAluno)
-    consultaEnderecos = bancoDados.retornarIntervalo(nomeTabEnd, pkTabEnd,
-                                                     qtdAluno)
+    consultaEnderecos = bD.retornarIntervalo(nomeTabEnd, pkTabEnd, qtdAluno)
     for contador, dados in enumerate(registros):
-        bancoDados.cadastroTabelas(dados['cpf'], dados['nome'], dados['sobrenome'], int(consultaEnderecos[contador][0]),
-                                   nome_tabela=nomeTabela,
-                                   nome_colunas=nomeColuna)
+        bD.cadastroTabelas(dados['cpf'], dados['nome'], dados['sobrenome'], int(consultaEnderecos[contador][0]),
+                           nome_tabela=nomeT,
+                           nome_colunas=nomeC)
     return contador + 1
+
+
+@logTempoExecucao
+def atualizadorRegistrosViaPKDataAniversario(bD: Escola, nomeT=None, nomeC=None, nomeCPesquisa=None, cond=None):
+    Faker.seed(763)
+    data = Faker(locale='pt-BR')
+    chavesP = bD.retornarValorTabela(nome_tabela=nomeT, nome_coluna=nomeCPesquisa)
+    numeroColunas: int = bD.contadorItens(nome_tabela=nomeT)[0]
+    for i in range(numeroColunas):
+        atualizacao = data.date_between(start_date="-60y", end_date="-16y")
+        bD.atualizarTabelas(atualizacao, nome_tabela=nomeT, nome_colunas=nomeC, condicao=f"{cond}'{next(chavesP)[0]}'")
+    return i + 1
 
 
 postgresSQL = Escola(host, porta, 'db_escola', 'fernandomendes', senha)
 
-QTD_REGISTROS = 500
+QTD_REGISTROS = 1000
 
-registradorEnderecos(QTD_REGISTROS,
-                     postgresSQL,
-                     nomeColunas='(logradouro, numero, bairro, complemento)',
-                     nomeTabela='cadastros_endereco')
+# registradorEnderecos(QTD_REGISTROS,
+#                      postgresSQL,
+#                      nomeColunas='(logradouro, numero, bairro, complemento)',
+#                      nomeTabela='cadastros_endereco')
 
-registradorAluno(bancoDados=postgresSQL, qtdAluno=QTD_REGISTROS,
-                 nomeTabela='cadastros_aluno',
-                 nomeColuna='(cpf, nome_aluno, sobrenome_aluno, endereco)',
-                 nomeTabEnd='cadastros_endereco', pkTabEnd='cod_end')
+# registradorAluno(bD=postgresSQL, qtdAluno=QTD_REGISTROS,
+#                  nomeT='cadastros_aluno',
+#                  nomeC='(cpf, nome_aluno, sobrenome_aluno, endereco)',
+#                  nomeTabEnd='cadastros_endereco', pkTabEnd='cod_end')
 
+atualizadorRegistrosViaPKDataAniversario(postgresSQL, nomeT='cadastros_aluno', nomeC='dt_nasc', nomeCPesquisa='cpf', cond='cpf=')
 postgresSQL.fecharConexao()
