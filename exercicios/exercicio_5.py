@@ -24,6 +24,7 @@ def geradorDadosAlunos(qtdAlunos: int) -> list:
     contador = 0
     while contador < qtdAlunos:
         dadoBruto: str = geradorFalso.name()
+        datanasc = geradorFalso.date_between(start_date="-60y", end_date="-16y")
         recebeNome = ''
         recebeSobrenome = ''
         dadoCompleto = {
@@ -43,6 +44,7 @@ def geradorDadosAlunos(qtdAlunos: int) -> list:
         dadoCompleto['cpf'] = cpfsListados[contador]
         dadoCompleto['nome'] = recebeNome
         dadoCompleto['sobrenome'] = recebeSobrenome
+        dadoCompleto['nasc'] = datanasc
         dadosColetados.append(dadoCompleto)
         contador += 1
     return dadosColetados
@@ -130,5 +132,5 @@ QTD_REGISTROS = 1000
 #                  nomeC='(cpf, nome_aluno, sobrenome_aluno, endereco)',
 #                  nomeTabEnd='cadastros_endereco', pkTabEnd='cod_end')
 
-atualizadorRegistrosViaPKDataAniversario(postgresSQL, nomeT='cadastros_aluno', nomeC='dt_nasc', nomeCPesquisa='cpf', cond='cpf=')
+# atualizadorRegistrosViaPKDataAniversario(postgresSQL, nomeT='cadastros_aluno', nomeC='dt_nasc', nomeCPesquisa='cpf', cond='cpf=')
 postgresSQL.fecharConexao()
