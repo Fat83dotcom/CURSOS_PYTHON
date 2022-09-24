@@ -96,6 +96,7 @@ class Escola(BancoDeDados):
             return erro,
 
     def cadastroTabelas(self, *args, nome_tabela=None, nome_colunas=None):
+        '''Insere valores nas tabelas declaradas.'''
         sql = self.geradorSQLInsert(*args, nome_colunas=nome_colunas, nome_tabela=nome_tabela)
         try:
             self.executar(sql)
@@ -106,6 +107,7 @@ class Escola(BancoDeDados):
             print(erro)
 
     def atualizarTabelas(self, *args, nome_tabela=None, nome_colunas=None, condicao=None):
+        '''Atualiza tabelas especificadas.'''
         sql = self.geradorSQLUpdate(*args, nome_tabela=nome_tabela, nome_colunas=nome_colunas, condicao=condicao)
         try:
             self.executar(sql)

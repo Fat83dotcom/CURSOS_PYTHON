@@ -18,13 +18,15 @@ def geradorCpf(qtdCpfs: int) -> list:
 
 @logTempoExecucao
 def geradorDadosAlunos(qtdAlunos: int) -> list:
+    Faker.seed(454)
     geradorFalso = Faker(locale='pt-br')
     cpfsListados = geradorCpf(qtdAlunos)
     dadosColetados: list = []
     contador = 0
     while contador < qtdAlunos:
         dadoBruto: str = geradorFalso.name()
-        datanasc = geradorFalso.date_between(start_date="-60y", end_date="-16y")
+        datanasc: str = str(geradorFalso.date_between(start_date="-60y", end_date="-16y"))
+        print(datanasc)
         recebeNome = ''
         recebeSobrenome = ''
         dadoCompleto = {
@@ -52,6 +54,7 @@ def geradorDadosAlunos(qtdAlunos: int) -> list:
 
 @logTempoExecucao
 def geradorEndereco(qtdEnderecos: int) -> list:
+    Faker.seed(564)
     geradorFalso = Faker(locale='pt-br')
     dadoCompleto: list = []
     while len(dadoCompleto) < qtdEnderecos:
@@ -100,9 +103,10 @@ def registradorAluno(qtdAluno: int,
     registros: list = geradorDadosAlunos(qtdAluno)
     consultaEnderecos = bD.retornarIntervalo(nomeTabEnd, pkTabEnd, qtdAluno)
     for contador, dados in enumerate(registros):
-        bD.cadastroTabelas(dados['cpf'], dados['nome'], dados['sobrenome'], int(consultaEnderecos[contador][0]),
+        bD.cadastroTabelas(dados['cpf'], dados['nome'], dados['sobrenome'], dados['nasc'], int(next(consultaEnderecos)[0]),
                            nome_tabela=nomeT,
                            nome_colunas=nomeC)
+        # print(consultaEnderecos[contador])
     return contador + 1
 
 
@@ -120,17 +124,20 @@ def atualizadorRegistrosViaPKDataAniversario(bD: Escola, nomeT=None, nomeC=None,
 
 postgresSQL = Escola(host, porta, 'db_escola', 'fernandomendes', senha)
 
-QTD_REGISTROS = 1000
+QTD_REGISTROS = 500
 
 # registradorEnderecos(QTD_REGISTROS,
 #                      postgresSQL,
 #                      nomeColunas='(logradouro, numero, bairro, complemento)',
 #                      nomeTabela='cadastros_endereco')
 
-# registradorAluno(bD=postgresSQL, qtdAluno=QTD_REGISTROS,
-#                  nomeT='cadastros_aluno',
-#                  nomeC='(cpf, nome_aluno, sobrenome_aluno, endereco)',
-#                  nomeTabEnd='cadastros_endereco', pkTabEnd='cod_end')
+registradorAluno(bD=postgresSQL, qtdAluno=QTD_REGISTROS,
+                 nomeT='cadastros_aluno',
+                 nomeC='(cpf, nome_aluno, sobrenome_aluno, dt_nasc, endereco)',
+                 nomeTabEnd='cadastros_endereco', pkTabEnd='cod_end')
 
 # atualizadorRegistrosViaPKDataAniversario(postgresSQL, nomeT='cadastros_aluno', nomeC='dt_nasc', nomeCPesquisa='cpf', cond='cpf=')
+
+# geradorDadosAlunos(10)
+
 postgresSQL.fecharConexao()
