@@ -124,12 +124,12 @@ def atualizadorRegistrosViaPKDataAniversario(bD: Escola, nomeT=None, nomeC=None,
 
 postgresSQL = Escola(host, porta, 'db_escola', 'fernandomendes', senha)
 
-QTD_REGISTROS = 500
+QTD_REGISTROS = 10
 
-# registradorEnderecos(QTD_REGISTROS,
-#                      postgresSQL,
-#                      nomeColunas='(logradouro, numero, bairro, complemento)',
-#                      nomeTabela='cadastros_endereco')
+registradorEnderecos(QTD_REGISTROS,
+                     postgresSQL,
+                     nomeColunas='(logradouro, numero, bairro, complemento)',
+                     nomeTabela='cadastros_endereco')
 
 registradorAluno(bD=postgresSQL, qtdAluno=QTD_REGISTROS,
                  nomeT='cadastros_aluno',
